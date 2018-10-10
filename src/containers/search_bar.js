@@ -21,7 +21,7 @@ class SearchBar extends Component {
     event.preventDefault();
     console.log('in onFormSubmit with term:', this.state.term);
     this.props.fetchWeather(this.state.term);
-    // this.setState({term:''});
+    this.setState({term:''});
 
   }
 
@@ -49,4 +49,5 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ fetchWeather }, dispatch);
 }
 
+// null because mapDispatchToProps should be 2nd argument
 export default connect(null, mapDispatchToProps)(SearchBar);
