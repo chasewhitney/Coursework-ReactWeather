@@ -10,7 +10,7 @@ class SearchBar extends Component {
     this.state = { term : ''};
     this.onInputChange = this.onInputChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
-    if(this.state.weatherData){console.log('data:', this.state.weatherData);}
+
   }
 
   onInputChange(event){
@@ -26,6 +26,7 @@ class SearchBar extends Component {
   }
 
   render() {
+    if(this.props.weather){console.log('Data was returned!', this.props.weather.data);}
     return (
       <div>
         <form onSubmit={this.onFormSubmit} className="input-group">
