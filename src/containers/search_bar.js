@@ -26,7 +26,6 @@ class SearchBar extends Component {
   }
 
   render() {
-    if(this.props.weather){console.log('Data was returned!', this.props.weather.data);}
     return (
       <div>
         <form onSubmit={this.onFormSubmit} className="input-group">
@@ -45,16 +44,9 @@ class SearchBar extends Component {
     )
   }
 };
-function mapStateToProps(state) {
-  // Whatever gets returned from here will show up
-  // as props inside of BookList
-  return {
-    weather: state.weatherData,
-  };
-}
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ fetchWeather }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
+export default connect(null, mapDispatchToProps)(SearchBar);
